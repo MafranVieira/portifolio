@@ -1,12 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;700&family=Josefin+Slab:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Mulish:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Sriracha&display=swap');
 
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css);
 
-* {
-    margin: :0;
+  * {
+    margin: 0;
     padding: 0;
+    list-style: none;
+    text-decoration: none;
+
 }
 
+:root{
+    --font-primary: "Baloo Da 2", sans-serif ;
+    --font-secundary: "josefin slab" sans-serif;
+    --font-action: "Muli" sans-serif;
+}
+
+.hamburguer{
+   /* background-color: red;*/
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    z-index: 100;
+    right: 2rem;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+    transition: 1.5s;
+}
+.show-menu.hamburguer{
+    right: 16rem;
+}
+
+.line{
+    width: 100%;
+    height: .2rem;
+    background-color:white;
+    box-shadow: 0.1rem 0.1rem 3px black;
+}
 
 header{
     width: 100%;
@@ -27,7 +60,7 @@ header{
     height: 100%;
     object-fit: cover;
     opacity: 0.5;
-    animation: zoom 25s ;
+    animation: zoom 25s;
 }
 
 @keyframes zoom {
@@ -48,7 +81,7 @@ header{
 .banner h1 {
     color: white;
     font-size: 3.5rem;
-    font-family: 'Baloo Da 2', sans-serif ;
+    font-family: var(--font-primary);
     font-weight: 200;
     text-shadow: .2rem .3rem 2px rgba(0, 0, 0, .4);
     line-height: 3.5rem;
@@ -67,7 +100,7 @@ header{
 }
 
 .banner p{
-    font-family: 'josefin slab' sans-serif;
+    font-family: var(--font-secundary);
     color: white;
     font-size: 2rem;
     text-shadow: .2rem .2rem rgba(0, 0, 0, .4);
@@ -78,8 +111,8 @@ header{
 }
 
 .banner button {
-    font-family: 'Muli' sans-serif;
-    color:#ffff;
+    font-family: var(--font-action);
+    color: #ffff;
     text-transform: uppercase;
     letter-spacing: .1rem;
     background: #642B73; 
@@ -95,5 +128,73 @@ header{
 
 .banner button:hover {
     opacity: .8;
+}
+
+.sidebar{
+    width: 20rem;
+    height: 100vh;
+    background-color: #ffff;
+    position: fixed;
+    top: 0;
+    right: -20rem;
+    transition: all 1s;
+}
+
+.show-menu .sidebar{
+    right: 0;
+}
+
+.show-menu #line1{
+    transform: rotate(45deg) translate(0.2rem, +.3rem);
+}
+
+.show-menu #line3{
+    transform: rotate(-45deg) translate(0.2rem, -.5rem);
+}
+
+.menu {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu-item{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.menu-link{
+    font-family: var(--font-action);
+    font-size: 2rem;
+    color: #555;
+    transition: color 1s;
+}
+.menu-link:hover{
+    color: #6a3093;
+}
+
+.social-media{
+   /* background-color: rgba(255, 0, 0, 0.493);*/
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.social-media i{
+    background-color: #6a3093;
+    color: white;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: background-color 1s;
+}
+.social-media i:hover{
+    background-color: #a044ff;
 }
 

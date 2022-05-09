@@ -183,12 +183,12 @@ header{
     top: 0;
     right: -25rem;
     transition: all 1s;
-    
+    z-index: ;
     
 }
 
 .show-menu .sidebar{
-    right: 0;
+    right: 80;
 }
 
 
